@@ -579,4 +579,4 @@
 <script type="text/javascript" src="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/plugins/designthemes-core-features/shortcodes/js/jquery.gmap.js" id="jquery.gmap-js"></script>
 
 
-<a href="#" id="toTop" style="display: none;"><span id="toTopHover"></span>To Top</a>
+<a href="#" id="toTop" style="display: none;"><span id="toTopHover"></span>To Top</a></body>
