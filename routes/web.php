@@ -34,12 +34,13 @@ use App\Models\Review;
 use App\Models\Comment;
 use App\Models\Product;
 
-Route::match(['get', 'post'], '/test', function(Request $request){
+Route::match(['get', 'post'], '/admin/manage-contents/home', function(Request $request){
 if ($request->isMethod('get')) {
             return view('backend.pages.home.create');
             // return view('backend.pages.home.index');
 }
-info(json_encode($request->all()));
+info(json_decode($request->content));
+return "respone";
 dd($request->all());
 });
 

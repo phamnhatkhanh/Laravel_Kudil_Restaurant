@@ -19,7 +19,7 @@ class CreateSectionsTable extends Migration
             $table->longText('content');
             $table->integer('serial');
             $table->integer('priority');
-            $table->integer('status');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
