@@ -1,0 +1,35 @@
+<div class="task">
+- build manage CMS: work with data.
+- push data to FE.
+</div>
+<div class="(?">
+
+</div>
+<div class="result">
+Route::get('/test',function(){
+
+$model = Blog::find(3);
+// $model->tags()->attach(2);
+return $model->tags;
+
+$model = Tag::find(1);
+// $model->blogs()->attach(2);
+return $model->blogs;
+dd($model);
+
+// $model = Blog::find(1);
+// dd($model->owner);
+
+// $model = User::find(1);
+// return($model->blogs);
+
+// $data = [
+// 'name'=> 'molly',
+// 'email'=> 'molly@gmail.com',
+// 'password'=> '123qwe+_',
+// ];
+// User::create($data);
+
+});
+
+</div>
