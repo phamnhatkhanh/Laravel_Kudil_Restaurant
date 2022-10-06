@@ -20,7 +20,7 @@ class CreateCommentsTable extends Migration
             $table->string('email');
             $table->string('website')->nullable();
             $table->string('content')->nullable();
-            $table->string('status')->default("hide");
+            $table->integer('status')->default(0);
             $table->timestamps();
 
             $table->foreign('blog_id')->references('id')->on('blogs');

@@ -24,6 +24,7 @@ use \App\Http\Controllers\Admin\ProductController as AdminProductController;
 use \App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use \App\Http\Controllers\Admin\TableController as AdminTableController;
 use \App\Http\Controllers\Admin\ReservationController as AdminReservationController;
+use \App\Http\Controllers\Admin\HomeController as AdminHomeController;
 
 use App\Models\Tag;
 use App\Models\Table;
@@ -33,15 +34,38 @@ use App\Models\Blog;
 use App\Models\Review;
 use App\Models\Comment;
 use App\Models\Product;
+use App\Models\Page;
+use App\Models\Section;
 
-Route::match(['get', 'post'], '/admin/manage-contents/home', function(Request $request){
-if ($request->isMethod('get')) {
-            return view('backend.pages.home.create');
-            // return view('backend.pages.home.index');
-}
-info(json_decode($request->content));
-return "respone";
-dd($request->all());
+Route::match(['get', 'post'], '/test', function(Request $request){
+     return response()->json(['blogs' => Blog::all()]);
+
+
+    // fill data in home page
+    // build page edit.
+
+
+// $model = Page::find(2);
+// // $model->sections()->attach(9);
+// return $model->sections;
+
+// $model = Section::find(6);
+// // $model->pages()->attach(1);
+// return $model->pages;
+// dd($model->toArray() );
+
+// $model = Blog::find(1);
+// dd($model->owner);
+
+// $model = User::find(1);
+// return($model->blogs);
+
+// $data = [
+// 'name'=> 'molly',
+// 'email'=> 'molly@gmail.com',
+// 'password'=> '123qwe+_',
+// ];
+// User::create($data);
 });
 
 
@@ -61,13 +85,11 @@ Route::get('/blog/date-and-author-left/',[BlogController::class, 'blogDateAndAut
 Route::get('/blog/fashion',[BlogController::class, 'blogFashion']) -> name('root-blog');
 Route::get('/blog/modern',[BlogController::class, 'blogModern']) -> name('root-blog');
 
-// Route::middleware("jsbfs")->get('something');
+
 
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-us');
-
-
 
 
 Route::prefix('admin')->group(function () {
@@ -76,20 +98,32 @@ Route::prefix('admin')->group(function () {
         return view('backend.dashboard');
     });
 
-    Route::get('/users',[UserController::class, 'index']);
-    Route::match(['get', 'post'], '/users/create', [UserController::class, 'createUser'])->name('createUser');
-    Route::match(['get', 'post'], '/users/edit/{id}', [UserController::class, 'editUser'])->name('editUser');;
-    Route::get('/users/delete/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+    Route::get('/manage-contents/home',[AdminHomeController::class, 'index']);
+    // Route::match(['get', 'post'], '/manage-contents/home/create', [AdminHomeController::class, 'createSection'])->name('createSection');
+    Route::match(['get', 'post'], '/manage-contents/home/edit/{id}', [AdminHomeController::class, 'editSection'])->name('editSection');;
+    Route::get('/manage-contents/home/delete/{id}', [AdminHomeController::class, 'deleteSection'])->name('deleteSection');
 
-    Route::get('/blogs',[AdminBlogController::class, 'index']);
-    Route::match(['get', 'post'], '/blogs/create', [AdminBlogController::class, 'createBlog'])->name('createBlog');
-    Route::match(['get', 'post'], '/blogs/edit/{id}', [AdminBlogController::class, 'editBlog'])->name('editBlog');;
-    Route::get('/blogs/delete/{id}', [AdminBlogController::class, 'deleteBlog'])->name('deleteBlog');
 
-    Route::get('/articles',[AdminArticleController::class, 'index']);
-    Route::match(['get', 'post'], '/articles/create', [AdminArticleController::class, 'createArticle'])->name('createArticle');
-    Route::match(['get', 'post'], '/articles/edit/{id}', [AdminArticleController::class, 'editArticle'])->name('editArticle');;
-    Route::get('/articles/delete/{id}', [AdminArticleController::class, 'deleteArticle'])->name('deleteArticle');
+    Route::prefix('/users')->group(function () {
+        Route::get('/',[UserController::class, 'index']);
+        Route::match(['get', 'post'], '/create', [UserController::class, 'createUser'])->name('createUser');
+        Route::match(['get', 'post'], '/edit/{id}', [UserController::class, 'editUser'])->name('editUser');;
+        Route::get('/delete/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+    });
+
+    Route::prefix('/blogs')->group(function () {
+        Route::get('/',[AdminBlogController::class, 'index']);
+        Route::match(['get', 'post'], '/create', [AdminBlogController::class, 'createBlog'])->name('createBlog');
+        Route::match(['get', 'post'], '/edit/{id}', [AdminBlogController::class, 'editBlog'])->name('editBlog');;
+        Route::get('/delete/{id}', [AdminBlogController::class, 'deleteBlog'])->name('deleteBlog');
+    });
+
+    Route::prefix('/articles')->group(function () {
+        Route::get('/',[AdminArticleController::class, 'index']);
+        Route::match(['get', 'post'], '/create', [AdminArticleController::class, 'createArticle'])->name('createArticle');
+        Route::match(['get', 'post'], '/edit/{id}', [AdminArticleController::class, 'editArticle'])->name('editArticle');;
+        Route::get('/delete/{id}', [AdminArticleController::class, 'deleteArticle'])->name('deleteArticle');
+    });
 
     Route::get('/comments',[AdminCommentController::class, 'index']);
     Route::match(['get', 'post'], '/comments/create', [AdminCommentController::class, 'createComment'])->name('createComment');

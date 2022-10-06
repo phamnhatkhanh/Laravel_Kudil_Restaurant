@@ -21,7 +21,7 @@ class CreateArticlesTable extends Migration
             // $table->string('icon');
             $table->string('image')->nullable();
             $table->string('slug');
-            $table->string('status')->default("disable");
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

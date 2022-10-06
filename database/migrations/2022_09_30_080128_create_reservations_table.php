@@ -22,7 +22,7 @@ class CreateReservationsTable extends Migration
             $table->string('number_people');
             $table->string('time');
             $table->date('date');
-            $table->string('status');
+            $table->integer('status')->default(0);
             $table->timestamps();
 
             $table->foreign('table_id')->references('id')->on('tables');

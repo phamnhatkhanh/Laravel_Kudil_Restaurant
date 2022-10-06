@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->string('price');
             $table->string('quantify');
-            $table->string('status')->default("hide");
+            $table->integer('status')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

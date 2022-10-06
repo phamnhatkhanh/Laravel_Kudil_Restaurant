@@ -17,7 +17,7 @@ class CreateTablesTable extends Migration
             $table->id();
             $table->string('name',50);
             $table->string('number_people');
-            $table->string('status')->default(0);
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

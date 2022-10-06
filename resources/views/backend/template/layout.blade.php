@@ -3,7 +3,7 @@
 
 <head>
     @yield('title')
-
+    @include('client.partial.header'
     @include('backend.partial.header')
     @section('head')
     @show
@@ -36,6 +36,7 @@
 
         @include('backend.template.footer')
 
+        @include('client.partial.footer')
         @include('backend.partial.footer')
         @section('footer')@show
 

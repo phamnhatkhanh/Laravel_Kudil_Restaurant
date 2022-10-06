@@ -20,7 +20,7 @@ class CreateReviewsTable extends Migration
             $table->string('email');
             $table->string('rating');
             $table->text('content');
-            $table->string('status');
+            $table->integer('status')->default(0);
             $table->timestamps();
 
             $table->foreign('product_id')->references('id')->on('products');

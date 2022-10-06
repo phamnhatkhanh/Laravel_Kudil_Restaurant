@@ -46,7 +46,7 @@ class BlogController extends Controller
             $link_image = "";
         }
         $input = [
-            'user_id' => 21,
+            'user_id' => 1,
             'title' => $request->title,
             'description' => $request->description,
             'content' => $request->content,

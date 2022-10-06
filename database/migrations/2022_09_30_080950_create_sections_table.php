@@ -18,7 +18,7 @@ class CreateSectionsTable extends Migration
             $table->string('name');
             $table->longText('content');
             $table->integer('serial');
-            $table->integer('priority');
+            $table->integer('priority')->nulable();
             $table->integer('status')->default(0);
             $table->timestamps();
         });

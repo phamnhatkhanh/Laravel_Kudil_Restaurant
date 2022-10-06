@@ -23,7 +23,7 @@ class CreateBlogsTable extends Migration
             $table->string('slug',50);
             $table->string('number_view')->defaults(0);
             $table->string('number_like')->defaults(0);
-            $table->string('status')->default(0);
+            $table->integer('status')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
