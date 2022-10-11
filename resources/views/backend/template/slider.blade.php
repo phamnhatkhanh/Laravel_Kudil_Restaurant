@@ -193,7 +193,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/manage-contents" class="nav-link">
+                    <a href="/admin/manage-contents/pages/{page}/" class="nav-link">
                         <i class="fa-solid fa-file-lines"></i>
                         <p>
                             Manage Contents
@@ -203,14 +203,14 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/manage-contents/home" class="nav-link">
+                            <a href="/admin/manage-contents/pages/1/" class="nav-link">
 
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Home</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/manage-contents/about-us" class="nav-link">
+                            <a href="/admin/manage-contents/pages/2/" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>About us</p>
                             </a>

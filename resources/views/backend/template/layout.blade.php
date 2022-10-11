@@ -3,8 +3,9 @@
 
 <head>
     @yield('title')
-    @include('client.partial.header'
+
     @include('backend.partial.header')
+    @include('client.partial.header')
     @section('head')
     @show
 

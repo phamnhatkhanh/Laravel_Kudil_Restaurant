@@ -1,4 +1,8 @@
 @extends('client.layout.layout')
+@section('head')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+@show
 @section('content')
 
 <!-- **Main** -->
@@ -11,306 +15,48 @@
             <!-- #post-14 -->
             <div id="post-14" class="post-14 page type-page status-publish hentry">
 
+                @foreach ($sections as $section)
+                    @if( $section->status == 1)
+                        {!!$section->content!!}
+                    @endif
+                @endforeach
 
 
 
 
-
-
-                <section class="vc_section">
-                    <div class="vc_row wpb_row vc_row-fluid">
-                        <div class="wpb_column vc_column_container vc_col-sm-12">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-                                    <div id="1523854758680-59af87e5-c53c" class="dt-sc-empty-space"></div>
-                                    <div class='dt-sc-title with-image with-sub-title aligncenter'>
-                                        <h4>Talent and Experience</h4>
-                                        <h2>Team Members</h2>
-                                        <p><img width="43" height="43"
-                                                src="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/flower-decor.png"
-                                                class="attachment-full" alt="flower-decor" loading="lazy" />
-                                        </p>
-                                    </div>
-                                    <div id="1523854828554-41c1e41a-998e" class="dt-sc-empty-space"></div>
-                                    <div class="vc_row wpb_row vc_inner vc_row-fluid">
-                                        <div class="rs_col-sm-12 wpb_column vc_column_container vc_col-sm-4">
-                                            <div class="vc_column-inner ">
-                                                <div class="wpb_wrapper">
-                                                    <div class='dt-sc-team hide-details-show-on-hover '>
-                                                        <div class='dt-sc-team-thumb'><img width="380" height="506"
-                                                                src="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/team1.jpg"
-                                                                class="attachment-full" alt="" loading="lazy"
-                                                                srcset="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/team1.jpg 380w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/team1-225x300.jpg 225w"
-                                                                sizes="(max-width: 380px) 100vw, 380px" />
-                                                        </div>
-                                                        <div class='dt-sc-team-details'>
-                                                            <h4>MARC COPPOLO</h4>
-                                                            <h5>Head Of Chef</h5>
-                                                            <ul class='dt-sc-team-social rounded-square'>
-                                                                <li><a class="fa fa-twitter" href="#"
-                                                                        title="Twitter"></a></li>
-                                                                <li><a class="fa fa-facebook" href="#"
-                                                                        title="Facebook"></a></li>
-                                                                <li><a class="fa fa-google-plus" href="#"
-                                                                        title="Google"></a></li>
-                                                                <li><a class="fa fa-linkedin" href="#"
-                                                                        title="Linkedin"></a></li>
-                                                            </ul>
-                                                            <p></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="rs_col-sm-12 wpb_column vc_column_container vc_col-sm-4">
-                                            <div class="vc_column-inner ">
-                                                <div class="wpb_wrapper">
-                                                    <div class='dt-sc-team hide-details-show-on-hover '>
-                                                        <div class='dt-sc-team-thumb'><img width="380" height="506"
-                                                                src="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/team2.jpg"
-                                                                class="attachment-full" alt="" loading="lazy"
-                                                                srcset="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/team2.jpg 380w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/team2-225x300.jpg 225w"
-                                                                sizes="(max-width: 380px) 100vw, 380px" />
-                                                        </div>
-                                                        <div class='dt-sc-team-details'>
-                                                            <h4>MARY SANDRA</h4>
-                                                            <h5>Executive Chef</h5>
-                                                            <ul class='dt-sc-team-social rounded-square'>
-                                                                <li><a class="fa fa-twitter" href="#"
-                                                                        title="Twitter"></a></li>
-                                                                <li><a class="fa fa-facebook" href="#"
-                                                                        title="Facebook"></a></li>
-                                                                <li><a class="fa fa-google-plus" href="#"
-                                                                        title="Google"></a></li>
-                                                                <li><a class="fa fa-linkedin" href="#"
-                                                                        title="Linkedin"></a></li>
-                                                            </ul>
-                                                            <p></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="rs_col-sm-12 wpb_column vc_column_container vc_col-sm-4">
-                                            <div class="vc_column-inner ">
-                                                <div class="wpb_wrapper">
-                                                    <div class='dt-sc-team hide-details-show-on-hover '>
-                                                        <div class='dt-sc-team-thumb'><img width="380" height="506"
-                                                                src="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/team3.jpg"
-                                                                class="attachment-full" alt="" loading="lazy"
-                                                                srcset="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/team3.jpg 380w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/team3-225x300.jpg 225w"
-                                                                sizes="(max-width: 380px) 100vw, 380px" />
-                                                        </div>
-                                                        <div class='dt-sc-team-details'>
-                                                            <h4>LOHAN CRAIG</h4>
-                                                            <h5>Decoration Chef</h5>
-                                                            <ul class='dt-sc-team-social rounded-square'>
-                                                                <li><a class="fa fa-twitter" href="#"
-                                                                        title="Twitter"></a></li>
-                                                                <li><a class="fa fa-facebook" href="#"
-                                                                        title="Facebook"></a></li>
-                                                                <li><a class="fa fa-google-plus" href="#"
-                                                                        title="Google"></a></li>
-                                                                <li><a class="fa fa-linkedin" href="#"
-                                                                        title="Linkedin"></a></li>
-                                                            </ul>
-                                                            <p></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="1523854769172-ec2d9fdf-e3bf" class="dt-sc-empty-space"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <div data-vc-full-width="true" data-vc-full-width-init="false"
-                    class="vc_row wpb_row vc_row-fluid dt-sc-dark-bg vc_custom_1628228576368 vc_row-has-fill">
-                    <div class="wpb_column vc_column_container vc_col-sm-12">
-                        <div class="vc_column-inner " style=" text-align:center; ">
-                            <div class="wpb_wrapper">
-                                <div id="1523865091863-22bcea49-a84b" class="dt-sc-empty-space"></div>
-                                <div class='dt-sc-title script-with-sub-title '>
-                                    <h3>Need a Quality &amp; Taste Improve?</h3>
-                                    <h4>Signup with Newsletter</h4>
-                                </div>
-                                <div id="1523865091959-7c03b318-c4ba" class="dt-sc-empty-space"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="vc_row-full-width vc_clearfix"></div>
-                <section class="vc_section dt_data_bully">
-                    <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid">
-                        <div class="wpb_column vc_column_container vc_col-sm-12">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-                                    <div id="1523873078327-b4e1138f-602a" class="dt-sc-empty-space"></div>
-                                    <div class='dt-sc-title with-image with-sub-title aligncenter'>
-                                        <h4>Latest News</h4>
-                                        <h2>Blog Posts</h2>
-                                        <p><img width="50" height="50"
-                                                src="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/flower-decor-2.png"
-                                                class="attachment-full" alt="flower-decor-2" loading="lazy" /></p>
-                                    </div>
-                                    <div class="dt-sc-posts-list-wrapper">
-                                        <div class="tpl-blog-holder apply-isotope">
-                                            <div class='grid-sizer column dt-sc-one-half'></div>
-                                            <div class='column dt-sc-one-half first'>
-                                                <article id="post-8700"
-                                                    class="blog-entry entry-minimal-bordered format-standard post-8700 post type-post status-publish has-post-thumbnail hentry category-food tag-traditional">
-                                                    <!-- Featured Image -->
-                                                    <div class="entry-thumb">
-                                                        <a href="https://dtkudil.wpengine.com/8-top-ways-to-cover-clients/"
-                                                            title="Permalink to The Traditional Way">
-                                                            <img width="750" height="500"
-                                                                src="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog3.jpg"
-                                                                class="attachment-kudil-blog-ii-column size-kudil-blog-ii-column wp-post-image"
-                                                                alt=""
-                                                                srcset="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog3.jpg 1230w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog3-300x200.jpg 300w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog3-768x512.jpg 768w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog3-1024x683.jpg 1024w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog3-750x500.jpg 750w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog3-540x360.jpg 540w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog3-600x400.jpg 600w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" />
-                                                        </a>
-                                                        <div class="entry-format hidden">
-                                                            <a class="ico-format" href=""></a>
-                                                        </div>
-                                                    </div><!-- Featured Image -->
-
-                                                    <!-- Post Details -->
-                                                    <div class="entry-details">
-
-                                                        <div class="entry-title">
-
-                                                            <div class="entry-meta ">
-                                                                <p class=" category"><a
-                                                                        href="https://dtkudil.wpengine.com/category/food/"
-                                                                        rel="category tag">Food</a></p>
-                                                                <p class='tags '><a
-                                                                        href="https://dtkudil.wpengine.com/tag/traditional/"
-                                                                        rel="tag">Traditional</a></p>
-                                                            </div>
-
-                                                            <h4><a href="https://dtkudil.wpengine.com/8-top-ways-to-cover-clients/"
-                                                                    title="Permalink to The Traditional Way">The
-                                                                    Traditional Way</a></h4>
-                                                            <!-- Meta -->
-                                                            <div class="entry-meta-data ">
-                                                                <div class="author "><img alt=''
-                                                                        src='https://secure.gravatar.com/avatar/453a59a0552b87df037b3c87a0b2c562?s=35&#038;d=mm&#038;r=g'
-                                                                        srcset='https://secure.gravatar.com/avatar/453a59a0552b87df037b3c87a0b2c562?s=70&#038;d=mm&#038;r=g 2x'
-                                                                        class='avatar avatar-35 photo' height='35'
-                                                                        width='35' loading='lazy' /><a
-                                                                        href="https://dtkudil.wpengine.com/author/admin/"
-                                                                        title="View all posts by Admin">Admin</a>
-                                                                </div>
-
-                                                                <div class="date ">Aug 26, 2017</div>
-
-                                                                <div class="comments "><a
-                                                                        href="https://dtkudil.wpengine.com/8-top-ways-to-cover-clients/#respond">0
-                                                                        Comments</a> </div>
-                                                            </div><!-- Meta -->
-                                                        </div>
-
-                                                        <div class="entry-body">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur
-                                                                adipiscing elit. Phasellus a nunc imperdiet,
-                                                                bibendum lectus accumsan, aliquet nisl.
-                                                                Fusce a venenatis diam.</p>
-                                                        </div>
-
-                                                        <!-- Read More Button -->
-                                                        <!-- Read More Button -->
-
-                                                    </div><!-- Post Details -->
-                                                </article>
-                                            </div>
-                                            <div class='column dt-sc-one-half'>
-                                                <article id="post-8701"
-                                                    class="blog-entry entry-minimal-bordered format-standard post-8701 post type-post status-publish format-quote has-post-thumbnail hentry category-food tag-tips post_format-post-format-quote">
-                                                    <!-- Featured Image -->
-                                                    <div class="entry-thumb">
-                                                        <a href="https://dtkudil.wpengine.com/customer-service-tips/"
-                                                            title="Permalink to Customer Service Tips">
-                                                            <img width="750" height="500"
-                                                                src="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog2.jpg"
-                                                                class="attachment-kudil-blog-ii-column size-kudil-blog-ii-column wp-post-image"
-                                                                alt="" loading="lazy"
-                                                                srcset="https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog2.jpg 1230w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog2-300x200.jpg 300w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog2-768x512.jpg 768w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog2-1024x683.jpg 1024w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog2-750x500.jpg 750w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog2-540x360.jpg 540w, https://rnzxu3lrgrj1046y63g4g7l1-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/blog2-600x400.jpg 600w"
-                                                                sizes="(max-width: 750px) 100vw, 750px" />
-                                                        </a>
-                                                        <div class="entry-format hidden">
-                                                            <a class="ico-format" href=""></a>
-                                                        </div>
-                                                    </div><!-- Featured Image -->
-
-                                                    <!-- Post Details -->
-                                                    <div class="entry-details">
-
-                                                        <div class="entry-title">
-
-                                                            <div class="entry-meta ">
-                                                                <p class=" category"><a
-                                                                        href="https://dtkudil.wpengine.com/category/food/"
-                                                                        rel="category tag">Food</a></p>
-                                                                <p class='tags '><a
-                                                                        href="https://dtkudil.wpengine.com/tag/tips/"
-                                                                        rel="tag">Tips</a></p>
-                                                            </div>
-
-                                                            <h4><a href="https://dtkudil.wpengine.com/customer-service-tips/"
-                                                                    title="Permalink to Customer Service Tips">Customer
-                                                                    Service Tips</a></h4>
-                                                            <!-- Meta -->
-                                                            <div class="entry-meta-data ">
-                                                                <div class="author "><img alt=''
-                                                                        src='https://secure.gravatar.com/avatar/453a59a0552b87df037b3c87a0b2c562?s=35&#038;d=mm&#038;r=g'
-                                                                        srcset='https://secure.gravatar.com/avatar/453a59a0552b87df037b3c87a0b2c562?s=70&#038;d=mm&#038;r=g 2x'
-                                                                        class='avatar avatar-35 photo' height='35'
-                                                                        width='35' loading='lazy' /><a
-                                                                        href="https://dtkudil.wpengine.com/author/admin/"
-                                                                        title="View all posts by Admin">Admin</a>
-                                                                </div>
-
-                                                                <div class="date ">Jun 20, 2017</div>
-
-                                                                <div class="comments "><a
-                                                                        href="https://dtkudil.wpengine.com/customer-service-tips/#respond">0
-                                                                        Comments</a> </div>
-                                                            </div><!-- Meta -->
-                                                        </div>
-
-                                                        <div class="entry-body">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur
-                                                                adipiscing elit. Phasellus a nunc imperdiet,
-                                                                bibendum lectus accumsan, aliquet nisl.
-                                                                Fusce a venenatis diam.</p>
-                                                        </div>
-
-                                                        <!-- Read More Button -->
-                                                        <!-- Read More Button -->
-
-                                                    </div><!-- Post Details -->
-                                                </article>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="1536926866019-0414c30b-60d2" class="dt-sc-empty-space"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="vc_row-full-width vc_clearfix"></div>
-                </section>
             </div><!-- #post-14 -->
         </section><!-- Primary End -->
     </div>
     <!-- ** Container End ** -->
 
 </div><!-- **Main - End ** -->
+<script type="text/javascript">
 
+    // var blogs;
+
+    $.ajax({
+        type:"GET",
+        dataType:"json",
+        url:'/test',
+        success:function(response){
+            console.log(response.blogs);
+            var blogs= (response.blogs);
+            var listBlog = $('#home_blogs');
+            var itemBlog = $('#blog');
+
+            $.each( blogs, function( key, blog ) {
+                var itemBlogClone = itemBlog.clone().removeAttr("style");
+                listBlog.append(itemBlogClone);
+                itemBlogClone.find("#image_blog").find('img').attr('src',blog.image)
+                itemBlogClone.find("#description_blog").text(blog.description);
+                itemBlogClone.find("#title_blog").children('a').text(blog.title);
+                console.log(itemBlogClone.find("#image_blog").find('img').src);
+            });
+        }
+
+    });
+
+</script>
 @endsection
 
 @section('banner')

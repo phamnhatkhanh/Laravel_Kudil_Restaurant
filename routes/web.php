@@ -24,7 +24,7 @@ use \App\Http\Controllers\Admin\ProductController as AdminProductController;
 use \App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use \App\Http\Controllers\Admin\TableController as AdminTableController;
 use \App\Http\Controllers\Admin\ReservationController as AdminReservationController;
-use \App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use \App\Http\Controllers\Admin\PageController as AdminPageController;
 
 use App\Models\Tag;
 use App\Models\Table;
@@ -37,36 +37,7 @@ use App\Models\Product;
 use App\Models\Page;
 use App\Models\Section;
 
-Route::match(['get', 'post'], '/test', function(Request $request){
-     return response()->json(['blogs' => Blog::all()]);
 
-
-    // fill data in home page
-    // build page edit.
-
-
-// $model = Page::find(2);
-// // $model->sections()->attach(9);
-// return $model->sections;
-
-// $model = Section::find(6);
-// // $model->pages()->attach(1);
-// return $model->pages;
-// dd($model->toArray() );
-
-// $model = Blog::find(1);
-// dd($model->owner);
-
-// $model = User::find(1);
-// return($model->blogs);
-
-// $data = [
-// 'name'=> 'molly',
-// 'email'=> 'molly@gmail.com',
-// 'password'=> '123qwe+_',
-// ];
-// User::create($data);
-});
 
 
 Route::get('/', [HomeController::class, 'index']);
@@ -98,10 +69,10 @@ Route::prefix('admin')->group(function () {
         return view('backend.dashboard');
     });
 
-    Route::get('/manage-contents/home',[AdminHomeController::class, 'index']);
-    // Route::match(['get', 'post'], '/manage-contents/home/create', [AdminHomeController::class, 'createSection'])->name('createSection');
-    Route::match(['get', 'post'], '/manage-contents/home/edit/{id}', [AdminHomeController::class, 'editSection'])->name('editSection');;
-    Route::get('/manage-contents/home/delete/{id}', [AdminHomeController::class, 'deleteSection'])->name('deleteSection');
+    Route::get('/manage-contents/pages/{page}',[AdminPageController::class, 'index']);
+    // Route::match(['get', 'post'], '/manage-contents/pages/create', [AdminPageController::class, 'createSection'])->name('createSection');
+    Route::get( '/manage-contents/pages/{page}/edit/{id}', [AdminPageController::class, 'editSection'])->name('editSection');;
+    Route::get('/manage-contents/pages/{page}/delete/{id}', [AdminPageController::class, 'deleteSection'])->name('deleteSection');
 
 
     Route::prefix('/users')->group(function () {
@@ -154,7 +125,15 @@ Route::prefix('admin')->group(function () {
     Route::match(['get', 'post'], '/reservations/create', [AdminReservationController::class, 'createReservation'])->name('createReservation');
     Route::match(['get', 'post'], '/reservations/edit/{id}', [AdminReservationController::class, 'editReservation'])->name('editReservation');;
     Route::get('/reservations/delete/{id}', [AdminReservationController::class, 'deleteReservation'])->name('deleteReservation');
+
+
+
 });
 
+Route::match(['get', 'post'], '/test', function(Request $request){
+     return response()->json(['blogs' => Blog::all()]);
+
+
+});
 
 

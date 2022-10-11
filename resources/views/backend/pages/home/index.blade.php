@@ -2,10 +2,9 @@
 
 @section('content')
 
-
 <section class="content">
     <div class="container-fluid">
-        <!-- <a href="./tags/create" class="btn btn-primary"> <i class="fa-solid fa-circle-plus"></i>  Create Tag</a> -->
+        <a href="./sections/create" class="btn btn-primary"> <i class="fa-solid fa-circle-plus"></i>  Create Review</a>
 
         <!-- Main row -->
             <div class="row">
@@ -26,7 +25,32 @@
                                     </thead>
                                     <tbody>
 
+                                        @foreach($sections as $section)
+                                            <tr class="">
 
+                                                <td style="vertical-align: middle;">
+                                                    {!! Str::limit($section->serial, 30, ' ...') !!}
+                                                </td>
+                                                <td style="vertical-align: middle;">
+                                                    {!! Str::limit($section->name, 30, ' ...') !!}
+                                                </td>
+
+                                                <td style="vertical-align: middle;text-align: center;">
+                                                    @if($section -> status== 1 )
+                                                    <span class="badge bg-success"> Actived</span>
+                                                    @else
+                                                    <span class="badge bg-danger"> Disable </span>
+                                                    @endif
+                                                </td>
+
+                                                <td style="vertical-align: middle;text-align: center;">
+                                                    <a href="./edit/{{$section->id}}" class="btn btn-primary"> <i class="far fa-edit"></i></a>
+                                                    <a href="./delete/{{$section->id}}"
+                                                        onclick="return confirm('Data cannot be backed up. Do you agree to delete?')"
+                                                        class="btn btn-danger"> <i class="fas fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

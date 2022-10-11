@@ -34,23 +34,5 @@ dd($model);
 });
 
 
-<script type="text/javascript">
-    var blogs;
-    $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: '/test',
-        success: function (response) {
-            // console.log(response.blogs);
-            blogs = (response.blogs);
-            $.each(blogs, function (key, blog) {
-                console.log(blog.title);
-            });
-        }
-
-    });
-
-</script>
-
 
 </div>
